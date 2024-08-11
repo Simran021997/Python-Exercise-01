@@ -1,0 +1,25 @@
+from sys import stdin
+#swap function
+def swap(arr,n):
+  r=n//2
+  for i in range(0,r):
+    arr[2*i],arr[2*i+1]=arr[2*i+1],arr[2*i]
+  return arr
+
+t=int(stdin.readline().strip())
+#taking input
+def takeinput():
+  n=int(stdin.readline().strip())
+  if n==0:
+    return list(),0
+  else:
+    arr=list(map(int,stdin.readline().strip().split(" ")))
+  return arr,n
+
+#main logic
+while t>0:
+  arr,n=takeinput()
+  if n!=0:
+    arr=swap(arr,n)
+    print(*arr)
+  t-=1
